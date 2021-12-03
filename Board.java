@@ -5,16 +5,15 @@ public class Board {
 
     // Initialize Objects
     ArrayList<ArrayList<Character>> board;
-    ArrayList<ArrayList<Boolean>> mask;
+    ArrayList<ArrayList<Integer>> mask;
     Random random = new Random();
 
 
     // Construct Board
-    public Board() {
+    public Board(int mineCount) {
 
         // Create Board
-        ArrayList<Character> boardRow0 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow0 = new ArrayList<>(); {
 
             boardRow0.add(' ');
             boardRow0.add(' ');
@@ -28,8 +27,7 @@ public class Board {
             boardRow0.add(' ');
 
         }
-        ArrayList<Character> boardRow1 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow1 = new ArrayList<>(); {
 
             boardRow1.add(' ');
             boardRow1.add(' ');
@@ -43,8 +41,7 @@ public class Board {
             boardRow1.add(' ');
 
         }
-        ArrayList<Character> boardRow2 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow2 = new ArrayList<>(); {
 
             boardRow2.add(' ');
             boardRow2.add(' ');
@@ -58,8 +55,7 @@ public class Board {
             boardRow2.add(' ');
 
         }
-        ArrayList<Character> boardRow3 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow3 = new ArrayList<>(); {
 
             boardRow3.add(' ');
             boardRow3.add(' ');
@@ -73,8 +69,7 @@ public class Board {
             boardRow3.add(' ');
 
         }
-        ArrayList<Character> boardRow4 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow4 = new ArrayList<>(); {
 
             boardRow4.add(' ');
             boardRow4.add(' ');
@@ -88,8 +83,7 @@ public class Board {
             boardRow4.add(' ');
 
         }
-        ArrayList<Character> boardRow5 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow5 = new ArrayList<>(); {
 
             boardRow5.add(' ');
             boardRow5.add(' ');
@@ -103,8 +97,7 @@ public class Board {
             boardRow5.add(' ');
 
         }
-        ArrayList<Character> boardRow6 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow6 = new ArrayList<>(); {
 
             boardRow6.add(' ');
             boardRow6.add(' ');
@@ -118,8 +111,7 @@ public class Board {
             boardRow6.add(' ');
 
         }
-        ArrayList<Character> boardRow7 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow7 = new ArrayList<>(); {
 
             boardRow7.add(' ');
             boardRow7.add(' ');
@@ -133,8 +125,7 @@ public class Board {
             boardRow7.add(' ');
 
         }
-        ArrayList<Character> boardRow8 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow8 = new ArrayList<>(); {
 
             boardRow8.add(' ');
             boardRow8.add(' ');
@@ -148,8 +139,7 @@ public class Board {
             boardRow8.add(' ');
 
         }
-        ArrayList<Character> boardRow9 = new ArrayList<>();
-        {
+        ArrayList<Character> boardRow9 = new ArrayList<>(); {
 
             boardRow9.add(' ');
             boardRow9.add(' ');
@@ -179,154 +169,144 @@ public class Board {
         }
 
         // Create Mask
-        ArrayList<Boolean> maskRow0 = new ArrayList<>();
-        {
+        ArrayList<Integer> maskRow0 = new ArrayList<>(); {
 
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-            maskRow0.add(false);
-
-        }
-        ArrayList<Boolean> maskRow1 = new ArrayList<>();
-        {
-
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
-            maskRow1.add(false);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
+            maskRow0.add(0);
 
         }
-        ArrayList<Boolean> maskRow2 = new ArrayList<>();
-        {
+        ArrayList<Integer> maskRow1 = new ArrayList<>(); {
 
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-            maskRow2.add(false);
-
-        }
-        ArrayList<Boolean> maskRow3 = new ArrayList<>();
-        {
-
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
-            maskRow3.add(false);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
+            maskRow1.add(0);
 
         }
-        ArrayList<Boolean> maskRow4 = new ArrayList<>();
-        {
+        ArrayList<Integer> maskRow2 = new ArrayList<>(); {
 
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-            maskRow4.add(false);
-
-        }
-        ArrayList<Boolean> maskRow5 = new ArrayList<>();
-        {
-
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
-            maskRow5.add(false);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
+            maskRow2.add(0);
 
         }
-        ArrayList<Boolean> maskRow6 = new ArrayList<>();
-        {
+        ArrayList<Integer> maskRow3 = new ArrayList<>(); {
 
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-            maskRow6.add(false);
-
-        }
-        ArrayList<Boolean> maskRow7 = new ArrayList<>();
-        {
-
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
-            maskRow7.add(false);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
+            maskRow3.add(0);
 
         }
-        ArrayList<Boolean> maskRow8 = new ArrayList<>();
-        {
+        ArrayList<Integer> maskRow4 = new ArrayList<>(); {
 
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
-            maskRow8.add(false);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
+            maskRow4.add(0);
 
         }
-        ArrayList<Boolean> maskRow9 = new ArrayList<>();
-        {
+        ArrayList<Integer> maskRow5 = new ArrayList<>(); {
 
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
-            maskRow9.add(false);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+            maskRow5.add(0);
+
+        }
+        ArrayList<Integer> maskRow6 = new ArrayList<>(); {
+
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+            maskRow6.add(0);
+
+        }
+        ArrayList<Integer> maskRow7 = new ArrayList<>(); {
+
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+            maskRow7.add(0);
+
+        }
+        ArrayList<Integer> maskRow8 = new ArrayList<>(); {
+
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+            maskRow8.add(0);
+
+        }
+        ArrayList<Integer> maskRow9 = new ArrayList<>(); {
+
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
+            maskRow9.add(0);
 
         }
         mask = new ArrayList<>(); {
@@ -345,7 +325,7 @@ public class Board {
         }
 
         // Set Mines
-        for (int i = 0; i < 20;) {
+        for (int i = 0; i < mineCount;) {
 
             int chosenRow = random.nextInt(10);
             int chosenColumn = random.nextInt(10);
@@ -448,7 +428,7 @@ public class Board {
 
                 if (board.get(i).get(j).equals('0')) {
 
-                    mask.get(i).set(j, true);
+                    mask.get(i).set(j, 2);
                     flag = true;
                     break;
 
@@ -466,21 +446,32 @@ public class Board {
 
     }
 
+
+    // Display
     public String getDisplay() {
 
         int rowCounter = 0;
         int columnCounter;
         StringBuilder display = new StringBuilder();
 
+        display.append("    A  B  C  D  E  F  G  H  I  J\n");
+
         for (ArrayList<Character> row : board) {
 
             columnCounter = 0;
 
+            display.append(rowCounter).append(" | ");
+
             for (char tile : row) {
 
-                if (mask.get(rowCounter).get(columnCounter).equals(true)) {
+
+                if (mask.get(rowCounter).get(columnCounter) == 2) {
 
                     display.append(tile);
+
+                } else if (mask.get(rowCounter).get(columnCounter) == 1) {
+
+                    display.append("░");
 
                 } else {
 
@@ -488,13 +479,21 @@ public class Board {
 
                 }
 
-                display.append("  ");
-                columnCounter++;
+                if (columnCounter != 9) {
+
+                    display.append("  ");
+                    columnCounter++;
+
+                }
 
             }
 
-            display.append('\n');
-            rowCounter++;
+            if (rowCounter != 9) {
+
+                display.append('\n');
+                rowCounter++;
+
+            }
 
         }
 
@@ -503,18 +502,34 @@ public class Board {
     }
 
 
-    // Get Values
-    public ArrayList<ArrayList<Character>> getBoard() {
-
-        return board;
-
-    }
-
-
     // Make Move
-    public void makeMove(int chosenColumn, int chosenRow) {
+    public void makeMove(char moveType, int chosenColumn, int chosenRow) {
 
+        if (moveType == 'F' || moveType == 'f') {
 
+            if (mask.get(chosenRow).get(chosenColumn) != 2) {
+
+                mask.get(chosenRow).set(chosenColumn, 1);
+
+            }
+
+        } else if (moveType == 'U' || moveType == 'u') {
+
+            if (mask.get(chosenRow).get(chosenColumn) == 1) {
+
+                mask.get(chosenRow).set(chosenColumn, 0);
+
+            }
+
+        } else if (moveType == 'R' || moveType == 'r') {
+
+            if (mask.get(chosenRow).get(chosenColumn) != 1) {
+
+                mask.get(chosenRow).set(chosenColumn, 2);
+
+            }
+
+        }
 
     }
 
@@ -532,68 +547,68 @@ public class Board {
 
                 for (int j = 0; j < 10; j++) {
 
-                    if (board.get(i).get(j).equals('0') && mask.get(i).get(j).equals(true)) {
+                    if (board.get(i).get(j).equals('0') && mask.get(i).get(j) == 2) {
 
                         // Up Left
-                        if (i != 0 && j != 0 && !mask.get(i - 1).get(j - 1).equals(true)) {
+                        if (i != 0 && j != 0 && mask.get(i - 1).get(j - 1) == 0) {
 
-                            mask.get(i - 1).set(j - 1, true);
+                            mask.get(i - 1).set(j - 1, 2);
                             flag = true;
 
                         }
 
                         // Up
-                        if (i != 0 && !mask.get(i - 1).get(j).equals(true)) {
+                        if (i != 0 && mask.get(i - 1).get(j) == 0) {
 
-                            mask.get(i - 1).set(j, true);
+                            mask.get(i - 1).set(j, 2);
                             flag = true;
 
                         }
 
                         // Up Right
-                        if (i != 0 && j != 9 && !mask.get(i - 1).get(j + 1).equals(true)) {
+                        if (i != 0 && j != 9 && mask.get(i - 1).get(j + 1) == 0) {
 
-                            mask.get(i - 1).set(j + 1, true);
+                            mask.get(i - 1).set(j + 1, 2);
                             flag = true;
 
                         }
 
                         // Left
-                        if (j != 0 && !mask.get(i).get(j - 1).equals(true)) {
+                        if (j != 0 && mask.get(i).get(j - 1) == 0) {
 
-                            mask.get(i).set(j - 1, true);
+                            mask.get(i).set(j - 1, 2);
                             flag = true;
 
                         }
 
                         // Right
-                        if (j != 9 && !mask.get(i).get(j + 1).equals(true)) {
+                        if (j != 9 && mask.get(i).get(j + 1) == 0) {
 
-                            mask.get(i).set(j + 1, true);
+                            mask.get(i).set(j + 1, 2);
                             flag = true;
 
                         }
 
                         // Down Left
-                        if (i != 9 && j != 0 && !mask.get(i + 1).get(j - 1).equals(true)) {
+                        if (i != 9 && j != 0 && mask.get(i + 1).get(j - 1) == 0) {
 
-                            mask.get(i + 1).set(j - 1, true);
+                            mask.get(i + 1).set(j - 1, 2);
                             flag = true;
 
                         }
 
                         // Down
-                        if (i != 9 && !mask.get(i + 1).get(j).equals(true)) {
+                        if (i != 9 && mask.get(i + 1).get(j) == 0) {
 
-                            mask.get(i + 1).set(j, true);
+                            mask.get(i + 1).set(j, 2);
                             flag = true;
 
                         }
 
                         // Down Right
-                        if (i != 9 && j != 9 && !mask.get(i + 1).get(j + 1).equals(true)) {
+                        if (i != 9 && j != 9 && mask.get(i + 1).get(j + 1) == 0) {
 
-                            mask.get(i + 1).set(j + 1, true);
+                            mask.get(i + 1).set(j + 1, 2);
                             flag = true;
 
                         }
@@ -605,6 +620,79 @@ public class Board {
             }
 
         } while (flag);
+
+    }
+
+    public int remainingMines() {
+
+        int mineCount = 0;
+
+        for (int i = 0; i < 10; i++) {
+
+            for (int j = 0; j < 10; j++) {
+
+                if (board.get(i).get(j).equals('X') && mask.get(i).get(j) == 0) {
+
+                    mineCount++;
+
+                }
+
+            }
+
+        }
+
+        return mineCount;
+
+    }
+
+    public int remainingEmpties() {
+
+        int emptyCount = 0;
+
+        for (int i = 0; i < 10; i++) {
+
+            for (int j = 0; j < 10; j++) {
+
+                if (!board.get(i).get(j).equals('X') && mask.get(i).get(j) == 0) {
+
+                    emptyCount++;
+
+                }
+
+            }
+
+        }
+
+        return emptyCount;
+
+    }
+
+    public boolean gameComplete() {
+
+        return ((remainingMines() == 0 && remainingEmpties() == 0) || gameLost());
+
+    }
+
+    public boolean gameLost() {
+
+        boolean isLost = false;
+
+        for (int i = 0; i < 10; i++) {
+
+            for (int j = 0; j < 10; j++) {
+
+                if (board.get(i).get(j).equals('X') && mask.get(i).get(j) == 2) {
+
+                    isLost = true;
+                    break;
+
+                }
+
+            }
+
+        }
+
+        return isLost;
 
     }
 
