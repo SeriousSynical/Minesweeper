@@ -523,7 +523,126 @@ public class Board {
 
         } else if (moveType == 'R' || moveType == 'r') {
 
-            if (mask.get(chosenRow).get(chosenColumn) != 1) {
+            if (mask.get(chosenRow).get(chosenColumn) == 2) {
+
+                int flagCounter = 0;
+
+                // Up Left
+                if (chosenRow != 0 && chosenColumn != 0 && mask.get(chosenRow - 1).get(chosenColumn - 1) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Up
+                if (chosenRow != 0 && mask.get(chosenRow - 1).get(chosenColumn) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Up Right
+                if (chosenRow != 0 && chosenColumn != 9 && mask.get(chosenRow - 1).get(chosenColumn + 1) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Left
+                if (chosenColumn != 0 && mask.get(chosenRow).get(chosenColumn - 1) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Right
+                if (chosenColumn != 9 && mask.get(chosenRow).get(chosenColumn + 1) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Down Left
+                if (chosenRow != 9 && chosenColumn != 0 && mask.get(chosenRow + 1).get(chosenColumn - 1) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Down
+                if (chosenRow != 9 && mask.get(chosenRow + 1).get(chosenColumn) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                // Down Right
+                if (chosenRow != 9 && chosenColumn != 9 && mask.get(chosenRow + 1).get(chosenColumn + 1) == 1) {
+
+                    flagCounter++;
+
+                }
+
+                if (Integer.parseInt(board.get(chosenRow).get(chosenColumn).toString()) == flagCounter) {
+
+                    if (chosenRow != 0 && chosenColumn != 0 && mask.get(chosenRow - 1).get(chosenColumn - 1) != 1) {
+
+                        mask.get(chosenRow - 1).set(chosenColumn - 1, 2);
+
+                    }
+
+                    // Up
+                    if (chosenRow != 0 && mask.get(chosenRow - 1).get(chosenColumn) != 1) {
+
+                        mask.get(chosenRow - 1).set(chosenColumn, 2);
+
+                    }
+
+                    // Up Right
+                    if (chosenRow != 0 && chosenColumn != 9 && mask.get(chosenRow - 1).get(chosenColumn + 1) != 1) {
+
+                        mask.get(chosenRow - 1).set(chosenColumn + 1, 2);
+
+                    }
+
+                    // Left
+                    if (chosenColumn != 0 && mask.get(chosenRow).get(chosenColumn - 1) != 1) {
+
+                        mask.get(chosenRow).set(chosenColumn - 1, 2);
+
+                    }
+
+                    // Right
+                    if (chosenColumn != 9 && mask.get(chosenRow).get(chosenColumn + 1) != 1) {
+
+                        mask.get(chosenRow).set(chosenColumn + 1, 2);
+
+                    }
+
+                    // Down Left
+                    if (chosenRow != 9 && chosenColumn != 0 && mask.get(chosenRow + 1).get(chosenColumn - 1) != 1) {
+
+                        mask.get(chosenRow + 1).set(chosenColumn - 1, 2);
+
+                    }
+
+                    // Down
+                    if (chosenRow != 9 && mask.get(chosenRow + 1).get(chosenColumn) != 1) {
+
+                        mask.get(chosenRow + 1).set(chosenColumn, 2);
+
+                    }
+
+                    // Down Right
+                    if (chosenRow != 9 && chosenColumn != 9 && mask.get(chosenRow + 1).get(chosenColumn + 1) != 1) {
+
+                        mask.get(chosenRow + 1).set(chosenColumn + 1, 2);
+
+                    }
+
+                }
+
+            } else if (mask.get(chosenRow).get(chosenColumn) != 1) {
 
                 mask.get(chosenRow).set(chosenColumn, 2);
 

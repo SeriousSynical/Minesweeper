@@ -72,6 +72,7 @@ public class Main {
             System.out.println("The number on a tile refers to the number of mines adjacent to it.");
             System.out.println("Try to reveal all empty spaces and flag all of the mines. If you accidentally reveal a mine, you lose!");
             System.out.println("Type \"R\" to reveal, \"F\" to flag, or \"U\" to un-flag. (Example Move: RA1)");
+            System.out.println("If you try to reveal a tile that has all of its mines flagged, it will reveal all adjacent empty spaces.");
             System.out.println();
 
 
